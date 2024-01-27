@@ -1,7 +1,7 @@
 # Open The Noor
 #### Added the "Open the noor" sound when attempting to open locked doors
 
-__<u>[Example](https://youtu.be/vKgmCteDbY8)</u>__
+__[Example](https://youtu.be/vKgmCteDbY8)__
 
 ## 1.1.1
 Fixed sound volume not being read from config
