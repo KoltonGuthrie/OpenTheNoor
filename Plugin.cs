@@ -1,25 +1,24 @@
 ﻿using BepInEx;
+using BepInEx.Configuration;
 using BepInEx.Logging;
-using OpenTheNoor.Patches;
 using HarmonyLib;
+using OpenTheNoor.Managers;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
-using OpenTheNoor.Managers;
 using System.Reflection;
-using BepInEx.Configuration;
+using UnityEngine;
 
 namespace OpenTheNoor
 {
 
-    [BepInPlugin(modGUID, modName, modVersion)]
+    [BepInPlugin(MOD_GUID, MOD_NAME, MOD_VERSION)]
     public class OpenTheNoorBase : BaseUnityPlugin
     {
-        private const string modGUID = "Kolton12O.OpenTheNoor";
-        private const string modName = "OpenTheNoor";
-        private const string modVersion = "1.1.0";
+        private const string MOD_GUID = "Kolton12O.OpenTheNoor";
+        private const string MOD_NAME = "OpenTheNoor";
+        private const string MOD_VERSION = "1.1.1";
 
-        private readonly Harmony harmony = new Harmony(modGUID);
+        private readonly Harmony harmony = new Harmony(MOD_GUID);
 
         public static OpenTheNoorBase Instance;
 
@@ -30,6 +29,7 @@ namespace OpenTheNoor
 
         public GameObject netManagerPrefab;
 
+        public float VOLUME_DEFAULT = 0.5f;
         public ConfigEntry<float> volume;
 
         void Awake()
@@ -55,12 +55,12 @@ namespace OpenTheNoor
 
             loadConfig();
 
-            mls = BepInEx.Logging.Logger.CreateLogSource(modGUID);
+            mls = BepInEx.Logging.Logger.CreateLogSource(MOD_GUID);
 
             mls.LogInfo("Open The Noor has awaken!");
 
             string FolderLocation = Instance.Info.Location;
-            FolderLocation = FolderLocation.TrimEnd((modName + ".dll").ToCharArray());
+            FolderLocation = FolderLocation.TrimEnd((MOD_NAME + ".dll").ToCharArray());
             Bundle = AssetBundle.LoadFromFile(FolderLocation + "openthenoor");
 
             SoundFX = new List<AudioClip>();
@@ -83,7 +83,7 @@ namespace OpenTheNoor
 
         void loadConfig()
         {
-            volume = Config.Bind<float>("General", "volume", 0.5f, "The volume that the sound will play at for you.");
+            volume = Config.Bind<float>("General", "volume", VOLUME_DEFAULT, "The volume that the sound will play at for you.");
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿using GameNetcodeStuff;
-using HarmonyLib;
-using OpenTheNoor.Patches;
+﻿using OpenTheNoor.Patches;
 using Unity.Netcode;
 using UnityEngine;
 

@@ -1,10 +1,7 @@
-﻿using DunGen;
-using GameNetcodeStuff;
+﻿using GameNetcodeStuff;
 using HarmonyLib;
 using OpenTheNoor.Managers;
-using Unity.Netcode;
 using UnityEngine;
-using static UnityEngine.InputSystem.InputAction;
 
 namespace OpenTheNoor.Patches
 {
@@ -30,9 +27,9 @@ namespace OpenTheNoor.Patches
             }
         }
 
-        public static void playOpenTheNoorNoise(AudioSource __audioSource, AudioClip[] sounds, float volume = 0.5f)
+        public static void playOpenTheNoorNoise(AudioSource __audioSource, AudioClip[] sounds)
         {
-            RoundManager.PlayRandomClip(__audioSource, sounds, true, volume);
+            RoundManager.PlayRandomClip(__audioSource, sounds, true, OpenTheNoorBase.Instance.volume.Value);
         }
     }
 }

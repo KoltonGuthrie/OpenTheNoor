@@ -3,6 +3,9 @@
 
 __<u>[Example](https://youtu.be/vKgmCteDbY8)</u>__
 
+## 1.1.1
+Fixed sound volume not being read from config
+
 ## 1.1.0 - Sound Overhaul
 Sound will now play for all nearby players.<br>
 Players can now share the joy of failing to open a locked door!
