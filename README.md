@@ -1,10 +1,11 @@
 # Open The Noor
-Added the "Open the noor" sound when attempting to open locked doors
+#### Added the "Open the noor" sound when attempting to open locked doors
 
-[Example](https://youtu.be/vKgmCteDbY8)
+__<u>[Example](https://youtu.be/vKgmCteDbY8)</u>__
 
-## 1.0.2
-Reimplemented 1.0.1 due to failed commit
+## 1.1.0 - Sound Overhaul
+Sound will now play for all nearby players.<br>
+Players can now share the joy of failing to open a locked door!
 
 ## 1.0.1
 Fixed inconsistent naming within code

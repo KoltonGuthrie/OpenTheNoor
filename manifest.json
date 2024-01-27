@@ -1,6 +1,6 @@
 {
     "name": "OpenTheNoor",
-    "version_number": "1.0.2",
+    "version_number": "1.1.0",
     "website_url": "https://github.com/KoltonGuthrie/OpenTheNoor",
     "description": "Added the \"Open the noor\" sound when attempting to open locked doors",
     "dependencies": [
