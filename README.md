@@ -2,6 +2,8 @@
 #### Added the "Open the noor" sound when attempting to open locked doors
 
 __[Example](https://youtu.be/vKgmCteDbY8)__
+## 1.1.2
+Added playForAllPlayers option to Config
 
 ## 1.1.1
 Fixed sound volume not being read from config
