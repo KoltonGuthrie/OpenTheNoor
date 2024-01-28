@@ -3,7 +3,7 @@
 
 __[Example](https://youtu.be/vKgmCteDbY8)__
 ## 1.1.2
-Added PLAY_FOR_ALL_PLAYERS option to Config
+Added playForAllPlayers option to Config
 
 ## 1.1.1
 Fixed sound volume not being read from config
