@@ -1,4 +1,4 @@
-﻿using OpenTheNoor.Patches;
+﻿using OpenTheNoor.Config;
 using Unity.Netcode;
 using UnityEngine;
 

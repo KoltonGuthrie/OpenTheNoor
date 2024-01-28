@@ -1,5 +1,4 @@
 ﻿using BepInEx;
-using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
 using OpenTheNoor.Managers;
@@ -8,29 +7,28 @@ using System.Linq;
 using System.Reflection;
 using UnityEngine;
 
-namespace OpenTheNoor
+namespace OpenTheNoor.Config
 {
 
     [BepInPlugin(MOD_GUID, MOD_NAME, MOD_VERSION)]
+
     public class OpenTheNoorBase : BaseUnityPlugin
     {
-        private const string MOD_GUID = "Kolton12O.OpenTheNoor";
-        private const string MOD_NAME = "OpenTheNoor";
-        private const string MOD_VERSION = "1.1.1";
+        public const string MOD_GUID = "Kolton12O.OpenTheNoor";
+        public const string MOD_NAME = "OpenTheNoor";
+        public const string MOD_VERSION = "1.1.2";
 
         private readonly Harmony harmony = new Harmony(MOD_GUID);
+
+        public static new Config Config { get; internal set; }
 
         public static OpenTheNoorBase Instance;
 
         internal ManualLogSource mls;
-
         internal static List<AudioClip> SoundFX;
         internal static AssetBundle Bundle;
 
         public GameObject netManagerPrefab;
-
-        public float VOLUME_DEFAULT = 0.5f;
-        public ConfigEntry<float> volume;
 
         void Awake()
         {
@@ -38,6 +36,10 @@ namespace OpenTheNoor
             {
                 Instance = this;
             }
+
+            mls = BepInEx.Logging.Logger.CreateLogSource(MOD_GUID);
+
+            Config = new(base.Config);
 
             var types = Assembly.GetExecutingAssembly().GetTypes();
             foreach (var type in types)
@@ -52,10 +54,6 @@ namespace OpenTheNoor
                     }
                 }
             }
-
-            loadConfig();
-
-            mls = BepInEx.Logging.Logger.CreateLogSource(MOD_GUID);
 
             mls.LogInfo("Open The Noor has awaken!");
 
@@ -79,11 +77,6 @@ namespace OpenTheNoor
 
             harmony.PatchAll();
 
-        }
-
-        void loadConfig()
-        {
-            volume = Config.Bind<float>("General", "volume", VOLUME_DEFAULT, "The volume that the sound will play at for you.");
         }
     }
 }

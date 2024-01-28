@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using OpenTheNoor.Config;
 using Unity.Netcode;
 using UnityEngine;
 
