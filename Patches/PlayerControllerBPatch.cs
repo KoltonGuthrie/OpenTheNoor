@@ -46,14 +46,14 @@ namespace OpenTheNoor.Config
         {
             if (Config.IsHost)
             {
-                Config.MessageManager.RegisterNamedMessageHandler("ModName_OnRequestConfigSync", Config.OnRequestSync);
+                Config.MessageManager.RegisterNamedMessageHandler($"{OpenTheNoorBase.MOD_GUID}_OnRequestConfigSync", Config.OnRequestSync);
                 Config.Synced = true;
 
                 return;
             }
 
             Config.Synced = false;
-            Config.MessageManager.RegisterNamedMessageHandler("ModName_OnReceiveConfigSync", Config.OnReceiveSync);
+            Config.MessageManager.RegisterNamedMessageHandler($"{OpenTheNoorBase.MOD_GUID}_OnReceiveConfigSync", Config.OnReceiveSync);
             Config.RequestSync();
         }
 

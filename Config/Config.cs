@@ -28,7 +28,7 @@ namespace OpenTheNoor.Config
             if (!IsClient) return;
 
             using FastBufferWriter stream = new(IntSize, Allocator.Temp);
-            MessageManager.SendNamedMessage("ModName_OnRequestConfigSync", 0uL, stream);
+            MessageManager.SendNamedMessage($"{OpenTheNoorBase.MOD_GUID}_OnRequestConfigSync", 0uL, stream);
         }
 
         public static void OnRequestSync(ulong clientId, FastBufferReader _)
@@ -47,7 +47,7 @@ namespace OpenTheNoor.Config
                 stream.WriteValueSafe(in value, default);
                 stream.WriteBytesSafe(array);
 
-                MessageManager.SendNamedMessage("ModName_OnReceiveConfigSync", clientId, stream);
+                MessageManager.SendNamedMessage($"{OpenTheNoorBase.MOD_GUID}_OnReceiveConfigSync", clientId, stream);
             }
             catch (Exception e)
             {
