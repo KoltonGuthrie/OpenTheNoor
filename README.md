@@ -1,7 +1,7 @@
 # Open The Noor - A mod for Lethal Company
 #### Added the "Open the noor" sound when attempting to open locked doors
 
-__[Example](https://youtu.be/vKgmCteDbY8)__
+__[Example](https://youtu.be/vKgmCteDbY8)__ | __[ThunderStore](https://thunderstore.io/c/lethal-company/p/Kolton12O/OpenTheNoor/)__
 
 ## 1.1.4
 Updated to work on Version 50
