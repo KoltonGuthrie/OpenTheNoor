@@ -3,6 +3,9 @@
 
 __[Example](https://youtu.be/vKgmCteDbY8)__ | __[ThunderStore](https://thunderstore.io/c/lethal-company/p/Kolton12O/OpenTheNoor/)__
 
+## 1.1.5
+Added playSoundChance option to Config
+
 ## 1.1.4
 Updated to work on Version 50
 
