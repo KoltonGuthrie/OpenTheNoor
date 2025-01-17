@@ -10,9 +10,11 @@ namespace OpenTheNoor.Config
     {
         private const float VOLUME_DEFAULT = 0.5f;
         private const bool PLAY_FOR_ALL_PLAYERS_DEFAULT = true;
+        private const float PLAY_SOUND_CHANCE_DEFAULT = 100.00f;
 
         public float VOLUME;
         public bool PLAY_FOR_ALL_PLAYERS;
+        public float PLAY_SOUND_CHANCE;
 
         public Config(ConfigFile cfg)
         {
@@ -20,6 +22,7 @@ namespace OpenTheNoor.Config
 
             VOLUME = cfg.Bind<float>("ClientSide", "volume", VOLUME_DEFAULT, "The volume that the sound will play at for you.").Value;
             PLAY_FOR_ALL_PLAYERS = cfg.Bind<bool>("ServerSide", "playForAllPlayers", PLAY_FOR_ALL_PLAYERS_DEFAULT, "Play the sound for other players.\nThis will allow all players to hear the sound when another player attempts to open a door.").Value;
+            PLAY_SOUND_CHANCE = cfg.Bind<float>("ServerSide", "playSoundChance", PLAY_SOUND_CHANCE_DEFAULT, "The percentage chance that the sound will play.").Value;
 
         }
 

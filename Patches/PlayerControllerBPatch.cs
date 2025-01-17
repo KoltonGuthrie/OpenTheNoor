@@ -17,14 +17,22 @@ namespace OpenTheNoor.Config
             if (__instance.hoveringOverTrigger != null)
             {
                 DoorLock __door = __instance.hoveringOverTrigger.GetComponentInParent<DoorLock>();
-                if (__door != null)
+
+                if (__door != null && __door.isLocked)
                 {
-                    if (__door.isLocked)
+
+                    float chance = Math.Max(0.00f, Math.Min(100.00f, Config.Instance.PLAY_SOUND_CHANCE));
+
+                    System.Random random = new System.Random();
+                    double rand = random.NextDouble() * 100.00f;
+
+                    if (rand <= chance)
                     {
                         if (Config.Instance.PLAY_FOR_ALL_PLAYERS)
                         {
                             NetworkManagerOpenTheNoor.Instance.MakeOpenTheNoorNoiseServerRpc(__door);
-                        } else
+                        }
+                        else
                         {
                             AudioSource audioSource = __door.doorLockSFX;
 
@@ -32,9 +40,7 @@ namespace OpenTheNoor.Config
                             {
                                 playOpenTheNoorNoise(audioSource, OpenTheNoorBase.SoundFX.ToArray());
                             }
-
                         }
-
                     }
                 }
             }
