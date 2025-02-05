@@ -16,7 +16,7 @@ namespace OpenTheNoor.Config
     {
         public const string MOD_GUID = "Kolton12O.OpenTheNoor";
         public const string MOD_NAME = "OpenTheNoor";
-        public const string MOD_VERSION = "1.1.5";
+        public const string MOD_VERSION = "1.1.6";
 
         private readonly Harmony harmony = new Harmony(MOD_GUID);
 
