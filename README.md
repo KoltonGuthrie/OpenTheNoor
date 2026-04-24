@@ -3,6 +3,9 @@
 
 __[Example](https://youtu.be/vKgmCteDbY8)__ | __[ThunderStore](https://thunderstore.io/c/lethal-company/p/Kolton12O/OpenTheNoor/)__
 
+## 1.1.7
+Updated to work on Version 80
+
 ## 1.1.6
 Fixed build not using NetcodePatcher
 
